@@ -1,0 +1,28 @@
+Deployment instructions for a linux system:
+
+Install node
+    cd ~
+    mkdir node
+    wget https://nodejs.org/dist/v8.9.3/node-v8.9.3-linux-x64.tar.gz
+    tar xvf node-v* -C ./node
+    rm -f node-v*
+
+Install Cards Server
+    cd ~
+    mkdir cards
+    cp <srcdir>/*.js cards
+
+Test installed files
+    cd ~/cards
+    ~/node/bin/npm install mocha
+    ./node_modules/.bin/mocha
+
+Run the server
+    ~/node/bin/node cards.js
+
+Verify that server initialized correctly
+    curl http://localhost:8083/peek
+
+View program
+    navigate in browser to:
+        http://localhost:8083
